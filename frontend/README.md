@@ -4,7 +4,7 @@ React + Vite frontend for the accompanying Spring Boot API.
 
 ## Run locally
 
-1. Start the Spring Boot backend on `http://localhost:8080`.
+1. From the repository root, run `cd backend` and start Spring Boot with `./mvnw.cmd spring-boot:run`.
 2. In this folder run `npm install` and then `npm run dev`.
 3. Open the URL printed by Vite (normally `http://localhost:5173`). The Vite proxy forwards `/api/*` to the Spring Boot application.
 
