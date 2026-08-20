@@ -72,6 +72,7 @@ function Dashboard({ username, onLogout }) {
   return <section className="card dashboard">
     <p className="eyebrow">Signed in</p>
     <h1>Dashboard</h1>
+    <p className="alert success" role="status">Login successful.</p>
     <p className="description">Welcome, <strong>{username}</strong>. You have successfully logged in.</p>
     <button className="secondary" onClick={onLogout}>Sign out</button>
   </section>
