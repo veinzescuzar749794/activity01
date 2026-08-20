@@ -89,8 +89,8 @@ export default function App() {
     <nav aria-label="Main navigation">
       <span className="brand">Account Portal</span>
       {!signedIn && <div className="nav-links">
-        <button className={page === 'login' ? 'link active' : 'link'} onClick={() => navigate('login')}>Login</button>
-        <button className={page === 'register' ? 'link active' : 'link'} onClick={() => navigate('register')}>Register</button>
+        <button className={page === 'login' ? 'link active' : 'link'} aria-current={page === 'login' ? 'page' : undefined} onClick={() => navigate('login')}>Login</button>
+        <button className={page === 'register' ? 'link active' : 'link'} aria-current={page === 'register' ? 'page' : undefined} onClick={() => navigate('register')}>Register</button>
       </div>}
     </nav>
     {signedIn ? <Dashboard username={username} onLogout={logout} /> : <AuthForm mode={page} onSuccess={setUsername} />}
