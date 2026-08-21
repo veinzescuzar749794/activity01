@@ -8,9 +8,21 @@ export async function request(path, body) {
   })
 
   const contentType = response.headers.get('content-type') || ''
-  const data = contentType.includes('application/json')
-    ? await response.json()
-    : await response.text()
+  const rawText = await response.text()
+
+  let data = rawText
+  if (rawText) {
+    const trimmed = rawText.trim()
+    if (trimmed && contentType.includes('application/json')) {
+      try {
+        data = JSON.parse(trimmed)
+      } catch {
+        data = trimmed
+      }
+    } else {
+      data = trimmed || ''
+    }
+  }
 
   if (!response.ok) {
     throw new Error(typeof data === 'string' ? data : 'The request could not be completed.')

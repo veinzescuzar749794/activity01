@@ -13,11 +13,6 @@ target/
 .springBeans
 .sts4-cache
 
-### React / Vite ###
-frontend/node_modules/
-frontend/dist/
-frontend/.env.local
-
 ### IntelliJ IDEA ###
 .idea
 *.iws
@@ -36,6 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-### Chrome Profile ###
-chrome-profile/
